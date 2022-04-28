@@ -37,7 +37,7 @@
     $conn->close();
     ?>
     <div>
-        <a href="../index.html"><input type="button" id="btn1" value="Home"></a>
+        <a href="../index.php"><input type="button" id="btn1" value="Home"></a>
     </div>
 </body>
 

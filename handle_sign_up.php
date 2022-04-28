@@ -36,9 +36,9 @@
     VALUES('$username', '$email', '$role', '$encrypted_pwd')";
 
     if ($conn->query($sql) === TRUE) {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.html"); //change to your login page url
+        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.php"); //change to your login page url
     } else {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/signup.html"); //change to your signup page url
+        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/signup.php"); //change to your signup page url
     }
 
     // Close connection
