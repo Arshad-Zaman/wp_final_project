@@ -27,7 +27,7 @@
     }
 
 
-    $sql = "CREATE TABLE users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20), email VARCHAR(50), role VARCHAR(6), password VARCHAR(20))";
+    $sql = "CREATE TABLE users (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, username VARCHAR(20), email VARCHAR(50), role VARCHAR(6), password VARCHAR(64))";
     if ($conn->query($sql) === TRUE) {
         echo "Table users created";
     } else {
