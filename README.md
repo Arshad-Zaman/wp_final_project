@@ -2,8 +2,9 @@
 ## [YouTube Demo]("https://www.youtube.com")
 ## To do:
 - Homepage (unassigned)
-- Login script (arshad)
-- Seller dashboard (unassigned)
+- Milestone 1 and 2 form validation (arshad)
+- Styling (Vince)
+- Seller dashboard (Mariama)
 - Buyer dashboard (unassigned)
 - Admin dashboaed (unassigned)
 - Record Video (unassigned)
