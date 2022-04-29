@@ -11,42 +11,58 @@
 <body>
     <?php
     require('db.php');
-
     session_start();
 
+    // //redirects if already logged in
+    if($_SESSION['role'] == "seller") {
+        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.php"); //change to your seller dashboard url
+    }
+    else if($_SESSION['role'] == "buyer") {
+        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.php"); //change to your seller dashboard url
+    }
+    else if($_SESSION['role'] == "admin") {
+        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
+    }
+
+
     // Process login form below:
-    if (isset($_POST['username'])) { //check if user is logged in
+    if (isset($_REQUEST['email'])) { //check if someone submitted login form
 
         // Get data from "login" page
-        $email = $_REQUEST["email"];
-        $password = $_REQUEST["password"];
-        $encrypted_pwd = md5($password); // encrypt password using md5
+        $email = $_REQUEST['email'];
+        $password = $_REQUEST['password'];
+        $encrypted_pwd = md5($password);
 
         // Query and get data
 
-        $sql = "SELECT username, email, role, password FROM users WHERE email='$email' AND password='$encrypted_pwd'";
+        $sql = "SELECT * FROM users WHERE email='$email' and password='$encrypted_pwd'";
+        $result = $conn->query($sql);
+        $rows = mysqli_num_rows($result);
 
-        if ($conn->query($sql) === TRUE) {
-            $row = $result->fetch_assoc();
+        if ($rows==1) {
+            $row = mysqli_fetch_assoc($result);
+            // set session variables
+
             $_SESSION['username'] = $row["username"];
             $_SESSION['role'] = $row["role"];
-            if($row["role"] == "seller") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.html"); //change to your seller dashboard url
-            }
-            else if($row["role"] == "buyer") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.html"); //change to your seller dashboard url
-            }
-            else if($row["role"] == "admin") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.html"); //change to your seller dashboard url
+            if ($row["role"] == "seller") {
+                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.php"); //change to your seller dashboard url
+            } else if ($row["role"] == "buyer") {
+                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.php"); //change to your seller dashboard url
+            } else if ($row["role"] == "admin") {
+                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
             }
         } else {
-            header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.php"); //change to your login page url
+            echo "<div class='form'>
+        <h3>Username/password is incorrect.</h3>
+        <br/>Click here to <a href='login.php'>Login</a></div>"; //change to your login page url
+
         }
     } else {
     ?>
         <h1>Login Here</h1>
         <table>
-            <form action="./handle_login.php" method="POST">
+            <form action="" method="POST">
                 <tr>
                     <td><input type="email" required name="email" placeholder="Email" /></td>
                 </tr>
