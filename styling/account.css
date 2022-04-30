@@ -1,0 +1,90 @@
+body, html {
+    font-family: Arial;
+    transition: all 1s linear;
+    height: 100%;
+    margin: auto;
+    background: black;
+}
+
+.bg {
+    background-image: url("styling/bg.png");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+}
+
+.container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+fieldset#login {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 20px darkslategray;
+    padding: 50px 35px;
+}
+
+fieldset#signup {
+    height: 700px;
+    width: 500px;
+    margin: auto;
+    background-color: white;
+    border: none;
+    box-shadow: 0 0 20px darkslategray;
+    padding: 50px 35px;
+}
+
+input[type=text], input[type=email], input[type=password] {
+    width: 75%;
+    padding: 10px;
+    margin: 5px 0 20px 0;
+    display: inline-block;
+    border: solid 1px gray;
+    background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+@keyframes fade {
+    from {background: #f1f1f1;}
+    to {background: #ddd;}
+}
+
+input[type="submit"] {
+    text-align: center;
+    font-size: 100%;
+    font-weight: bold;
+    background: navy;
+    border: none;
+    border-radius: 25px;
+    outline: none;
+    width: 100px;
+    height: 40px;
+    margin: 15px 0px;
+    color: white;
+    transition: 1s;
+}
+
+input[type="submit"]:hover {
+    background: lightskyblue;
+    transition: 1s;
+}
+
+hr {
+    border: 1px solid lightgray;
+    margin-bottom: 25px;
+}
