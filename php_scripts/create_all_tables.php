@@ -34,6 +34,22 @@
         echo "Table users already exists";
     }
 
+    //create cards table
+    $sql = "CREATE TABLE cards (id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY, 
+    img MEDIUMBLOB NOT NULL,
+    location VARCHAR(70),
+    age INT(4),
+    floorplan MEDIUMBLOB NOT NULL,
+    beds INT(4),
+    garden VARCHAR(4),
+    parking VARCHAR(4),
+    facilities VARCHAR(200),
+    proxFacil VARCHAR(100),
+    proxMR VARCHAR(100),
+    tax VARCHAR(200),
+    price INT(10)
+    )";
+
     $conn->close();
     ?>
     <div>
