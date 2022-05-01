@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling/account.css">
     <title>Sign Up</title>
 </head>
 
@@ -30,35 +31,43 @@
     }} else { //change to your signup page url
     ?>
     <!-- Form validation and page styling required -->
-    <table>
-        <tr>
-            <th>Sign up</th>
-        </tr>
-        <tr>
-            <td>Please fill in this form to create an account</td>
-        </tr>
+    <div class="bg"></div>
+    <div class="container">
         <form action="" method="POST">
-            <tr>
-                <td><input type="text" required name="username" placeholder="Username"></td>
-            </tr>
-            <tr>
-                <td><input type="email" required name="email" placeholder="Email Address"></td>
-            </tr>
-            <tr>
-                <td>Buyer<input type="radio" required name="role" value="buyer">
-                    Seller<input type="radio" name="role" value="seller"></td>
-            </tr>
-            <tr>
-                <td><input type="password" required name="password" placeholder="Password"></td>
-            </tr>
-            <tr>
-                <td><input type="password" required name="confirm_password" placeholder="Confirm Password"></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Register"></td>
-            </tr>
+            <fieldset id="signup">
+                <center>
+                    <h1>Sign Up</h1>
+                    <p>Sign up for an account here.</p>
+
+                    <hr>
+
+                    <label for="username"><b>Username</b></label><br>
+                    <input type="text" required name="username" placeholder="Username"><br>
+
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="email" required name="email" placeholder="Email" /><br>
+
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" required name="password" placeholder="Password" /><br>
+
+                    <label for="password"><b>Confirm Password</b></label><br>
+                    <input type="password" required name="confirm_password" placeholder="Confirm Password"><br>
+
+                    <label for="role"><b>Role: </b></label>
+                    <input type="radio" required name="role" value="buyer">Buyer
+                    <input type="radio" name="role" value="seller">Seller<br><br>
+
+                    <input type="submit" value="Register">
+
+                    <br><br><hr>
+                    <p>
+                        Already have an account?<br>
+                        <a href="login.php">Log in here.</a>
+                    </p>
+                </center>
+            </fieldset>
         </form>
-    </table>
+    </div>
     <?php } ?>
 </body>
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling/account.css">
     <title>Login</title>
 </head>
 
@@ -60,20 +61,33 @@
         }
     } else {
     ?>
-        <h1>Login Here</h1>
-        <table>
-            <form action="" method="POST">
-                <tr>
-                    <td><input type="email" required name="email" placeholder="Email" /></td>
-                </tr>
-                <tr>
-                    <td><input type="password" required name="password" placeholder="Password" /></td>
-                </tr>
-                <tr>
-                    <td><input type="submit" value="Login"></td>
-                </tr>
-            </form>
-        </table>
+
+    <div class="bg"></div>
+    <div class="container">
+        <form action="" method="POST">
+            <fieldset id="login">
+                <center>
+                    <h1>Login</h1>
+                    <p>Log in to your account here.</p>
+
+                    <hr>
+
+                    <label for="email"><b>Email</b></label><br>
+                    <input type="email" required name="email" placeholder="Email" />
+                    <br>
+                    <label for="password"><b>Password</b></label><br>
+                    <input type="password" required name="password" placeholder="Password" />
+                    <input type="submit" value="Login">
+
+                    <br><br><hr>
+                    <p>
+                        Don't have an account?<br>
+                        <a href="signup.php">Sign up here.</a>
+                    </p>
+                </center>
+            </fieldset>
+        </form>
+    </div>
     <?php } ?>
 </body>
 
