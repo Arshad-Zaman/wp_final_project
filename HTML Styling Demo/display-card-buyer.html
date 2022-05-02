@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styling/menu.css">
+        <link rel="stylesheet" href="styling/dashboard.css">
+        <title>Property Details</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div class="title">
+            <h1>MAIV PROPERTY HUB</h1>
+            <h3>REIMAGINING REAL ESTATE</h3>
+        </div>
+
+        <!-- Menu  -->
+        <div class="topnav">
+            <div class="topnav-centered">
+                <a href="index.html">About</a>
+            </div>
+            <div class="topnav-right">
+                <a href="seller-dashboard.html">Dashboard</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+
+        <!-- Title  -->
+
+        <h5>Property Details</h5>
+        <hr>
+
+        <!-- Property Details -->
+        <div class="card-details">
+            <img src="house.png" alt="Example House" id="img-details">
+            <h5>
+                Price: $999,999
+            </h5>
+            
+            <!-- Needs backend implementation: Replace to fill in with DB info -->
+            <div class="property-info">
+                <p><b>Address: </b>1234 Street Road, Atlanta, GA 30303</p>
+                <p><b>Type: </b>Residential</p>
+                <p><b>Bedrooms: </b>4</p>
+                <p><b>Bathrooms: </b>3</p>
+                <p><b>Total sq ft: </b>2620</p>
+
+                <!-- Currently doesn't redirect anywhere. Needs backend implementation. -->
+                <button type="button" id="edit">
+                    Wishlist
+                </button>
+            </div>
+            
+            <br><br><br>
+            <p>Click <a href="buyer-dashboard.html" id="other"><b>here</b></a> to return to the dashboard.</p>
+        </div>
+    </body>
+
+</html>

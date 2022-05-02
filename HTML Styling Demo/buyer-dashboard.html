@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styling/menu.css">
+        <link rel="stylesheet" href="styling/dashboard.css">
+        <title>Buyer Dashboard</title>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div class="title">
+            <h1>MAIV PROPERTY HUB</h1>
+            <h3>REIMAGINING REAL ESTATE</h3>
+        </div>
+
+        <!-- Menu  -->
+        <div class="topnav">
+            <div class="topnav-centered">
+                <a href="index.html">About</a>
+            </div>
+            <div class="topnav-right">
+                <a href="#" class="active">Dashboard</a>
+                <a href="buyer-wishlist.html">Wishlist</a>
+                <a href="logout.php">Logout</a>
+            </div>
+        </div>
+
+        <!-- Welcome -->
+
+        <h2>Welcome!</h2>
+
+        <!-- Search Bar -->
+        <div class="search">
+            <p id="searchtext"><b>Search Settings</b></p>
+
+            <label for="min">Min Price</label>
+            <input type="text" size="15" placeholder="0">
+            <label for="min">Max Price</label>
+            <input type="text" size="15" placeholder="9999999">
+            <label for="min"># of Beds</label>
+            <input type="text" size="5" placeholder="1">
+            <label for="min"># of Baths</label>
+            <input type="text" size="5" placeholder="1">
+        </div>
+
+        <br>
+
+        <!-- Display Cards: Return Search Results (PHP implementation needed) -->
+        <a href="display-card-buyer.html" id="other">
+            <div id="card">
+                <img src="house.png" alt="Example House">
+                <div class="container">
+                    <p id="address">
+                        1234 Street Road,<br>
+                        City, State Zipcode
+                    </p>
+                    <p id="details">
+                        <b>x bed • y baths • 2000 sq ft.</b>
+                    </p>
+                </div>
+            </div>
+        </a>
+
+</html>
