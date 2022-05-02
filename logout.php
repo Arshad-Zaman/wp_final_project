@@ -4,6 +4,6 @@ session_start();
 if(session_destroy())
 {
 // Redirecting To Home Page
-header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.php");
+header("Location: ./login.php");
 }
 ?>

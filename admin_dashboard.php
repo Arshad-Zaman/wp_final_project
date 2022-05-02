@@ -1,7 +1,7 @@
 <?php
 session_start();
 if($_SESSION["role"] != "admin"){
-header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/logout.php");
+header("Location: ./logout.php");
 exit("You are not an authorized to view this page");
 }
 ?>

@@ -28,7 +28,7 @@
     VALUES('$username', '$email', '$role', '$encrypted_pwd')";
 
 			if ($conn->query($sql) === TRUE) {
-				header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.php"); //change to your login page url
+				header("Location: ./login.php"); //change to your login page url
 			}
 		}
 	}
