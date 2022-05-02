@@ -16,11 +16,11 @@
 
     // //redirects if already logged in
     if ($_SESSION['role'] == "seller") {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.php"); //change to your seller dashboard url
+        header("Location: ./seller_dashboard.php"); //change to your seller dashboard url
     } else if ($_SESSION['role'] == "buyer") {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.php"); //change to your seller dashboard url
+        header("Location: ./buyer_dashboard.php"); //change to your seller dashboard url
     } else if ($_SESSION['role'] == "admin") {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
+        header("Location: ./admin_dashboard.php"); //change to your seller dashboard url
     }
 
 
@@ -45,11 +45,11 @@
             $_SESSION['username'] = $row["username"];
             $_SESSION['role'] = $row["role"];
             if ($row["role"] == "seller") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.php"); //change to your seller dashboard url
+                header("Location: ./seller_dashboard.php"); //change to your seller dashboard url
             } else if ($row["role"] == "buyer") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.php"); //change to your seller dashboard url
+                header("Location: ./buyer_dashboard.php"); //change to your seller dashboard url
             } else if ($row["role"] == "admin") {
-                header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
+                header("Location: ./admin_dashboard.php"); //change to your seller dashboard url
             }
         } else {
         $error = "Invalid credentials!";

@@ -1,9 +1,9 @@
 <?php
     // Shared script for interacting with database
     $servername = "localhost";
-    $username = "azaman3";
-    $password = "azaman3";
-    $dbname = "azaman3";
+    $username = "root"; // change to panther id if using codd
+    $password = ""; // change to panther id if using codd
+    $dbname = "azaman3"; // change to panther id if using codd
     // The above used four variables servername,username,password and dbname 
     // are according to my environment setting.
 

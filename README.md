@@ -11,3 +11,5 @@
 ## Signing up
 - On successful signup, redirects to login page (change header location on handle_sign_up.php)
 - On invalid signup, redirects back to signup page (change header location on handle_sign_up.php)
+
+# Seller Dashboard
