@@ -1,3 +1,6 @@
+<?php
+include('process.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,65 +13,65 @@
 </head>
 
 <body>
-    <?php
-    require('db.php');
+        <!-- Form validation and page styling required -->
+        <script>
+            function Validate() {
+                var password = document.getElementById("password").value;
+                var confirmPassword = document.getElementById("confirm_password").value;
+                if (password != confirmPassword) {
+                    alert("Passwords do not match.");
+                    return false;
+                }
+                return true;
+            }
+        </script>
+        <div class="bg"></div>
+        <div class="container">
+            <form action="signup.php" method="POST">
+                <fieldset id="signup">
+                    <center>
+                        <h1>Sign Up</h1>
+                        <p>Sign up for an account here.</p>
 
-    if (isset($_REQUEST['username'])){ //check if user is logged in
-    // Get data from sign up form
-    $username = $_REQUEST["username"];
-    $email = $_REQUEST["email"];
-    $role = $_REQUEST["role"];
-    $password = $_REQUEST["password"];
-    $encrypted_pwd = md5($password); // encrypt password using md5
+                        <hr>
 
-    // write the sql query in php file to Insert the data into the table
+                        <label for="username"><b>Username</b></label><br>
+                        <div <?php if (isset($name_error)) : ?>) class="form_error" <?php endif ?>>
+                            <input type="text" required name="username" placeholder="Username" value="<?php echo $username; ?>"><br>
+                            <?php if (isset($name_error)) : ?>
+                                <span><?php echo $name_error; ?></span>
+                            <?php endif ?>
+                        </div>
 
-    $sql = "INSERT INTO users (username, email, role, password)
-    VALUES('$username', '$email', '$role', '$encrypted_pwd')";
+                        <label for="email"><b>Email</b></label><br>
+                        <div <?php if (isset($email_error)) : ?>) class="form_error" <?php endif ?>>
+                            <input type="email" required name="email" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value="<?php echo $email; ?>" /><br>
+                            <?php if (isset($email_error)) : ?>
+                                <span><?php echo $email_error; ?></span>
+                            <?php endif ?>
+                        </div>
+                        <label for="password"><b>Password</b></label><br>
+                        <input type="password" required name="password" placeholder="Password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" /><br>
 
-    if ($conn->query($sql) === TRUE) {
-        header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/login.php"); //change to your login page url
-    }} else { //change to your signup page url
-    ?>
-    <!-- Form validation and page styling required -->
-    <div class="bg"></div>
-    <div class="container">
-        <form action="" method="POST">
-            <fieldset id="signup">
-                <center>
-                    <h1>Sign Up</h1>
-                    <p>Sign up for an account here.</p>
+                        <label for="password"><b>Confirm Password</b></label><br>
+                        <input type="password" required name="confirm_password" placeholder="Confirm Password" id="confirm_password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" /><br>
 
-                    <hr>
+                        <label for="role"><b>Role: </b></label>
+                        <input type="radio" required name="role" value="buyer">Buyer
+                        <input type="radio" name="role" value="seller">Seller<br><br>
 
-                    <label for="username"><b>Username</b></label><br>
-                    <input type="text" required name="username" placeholder="Username"><br>
+                        <input type="submit" name="register" value="Register" onclick="return Validate()">
 
-                    <label for="email"><b>Email</b></label><br>
-                    <input type="email" required name="email" placeholder="Email" /><br>
-
-                    <label for="password"><b>Password</b></label><br>
-                    <input type="password" required name="password" placeholder="Password" /><br>
-
-                    <label for="password"><b>Confirm Password</b></label><br>
-                    <input type="password" required name="confirm_password" placeholder="Confirm Password"><br>
-
-                    <label for="role"><b>Role: </b></label>
-                    <input type="radio" required name="role" value="buyer">Buyer
-                    <input type="radio" name="role" value="seller">Seller<br><br>
-
-                    <input type="submit" value="Register">
-
-                    <br><br><hr>
-                    <p>
-                        Already have an account?<br>
-                        <a href="login.php">Log in here.</a>
-                    </p>
-                </center>
-            </fieldset>
-        </form>
-    </div>
-    <?php } ?>
+                        <br><br>
+                        <hr>
+                        <p>
+                            Already have an account?<br>
+                            <a href="login.php">Log in here.</a>
+                        </p>
+                    </center>
+                </fieldset>
+            </form>
+        </div>
 </body>
 
 </html>
