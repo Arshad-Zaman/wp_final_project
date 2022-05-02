@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    background-color: #f1f1f1;
+    font-family: Raleway;
+}
+
+a#other:link, a#other:visited, a#other:active {
+    color: black;
+}
+
+#card {
+    width: 300px;
+    height: 420px;
+    background-color: white;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    margin-bottom: 25px;
+    margin-right: 2em;
+    float: left;
+}
+
+.card-details {
+    background-color: white;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    padding: 15px 15px;
+    height: 430px;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+#plus {
+    width: 300px;
+    height: 420px;
+    background-color: white;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    margin-bottom: 25px;
+    margin-right: 2em;
+    float: left;
+    text-align: center;
+    padding: 90px 0;
+}
+
+#card:hover, #plus:hover {
+    background-color: darkslategray;
+    color: white;
+    transition: ease-in-out 0.5s;
+}
+
+.container {
+    padding: 10px 20px;
+}
+
+.form {
+    background-color: white;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+    padding: 15px 15px;
+    width: 75%;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+}
+
+#img-details {
+    float:left;
+    width:400px;
+    margin-right: 25px;
+}
+
+input {
+    margin-top: 10px;
+    display: inline-block;
+    text-align: center;
+    font-family: Raleway;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+input:focus {
+    background-color: lightgray;
+    animation: fadeInput linear 0.5s;
+}
+
+@keyframes fadeInput {
+    0% {background-color: white}
+    100% {background-color: lightgray;}
+}
+
+input[type="file"] {
+    display: none;
+}
+
+input[type="submit"] {
+    background-color: #3498DB;
+    color: white;
+    padding: 14px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input[type="submit"]:hover, button#edit:hover, button#delete:hover {
+    opacity: 0.5;
+    animation: submitHover linear 0.5s;
+}
+
+@keyframes submitHover {
+    0% {opacity: 1;}
+    100% {opacity: 0.5;}
+}
+
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.custom-file-upload:hover {
+    background-color: lightskyblue;
+    animation: fadeIn linear 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {background-color: white}
+    100% {background-color: lightskyblue;}
+}
+
+label#bold {
+    font-weight: bold;
+}
+
+p#address {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+p#details {
+    margin-top: 1em;
+}
+
+h4 {
+    font-size: 64px;
+    font-weight: normal;
+}
+
+h5 {
+    font-size: 32px;
+    margin-top: 0.5em;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+table, td {
+    margin: auto;
+    border: 1px solid silver;
+    border-collapse: collapse;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+td#submitcol {
+    border: 1px solid white;
+    border-collapse: collapse;
+}
+
+.property-info {
+    text-align: left;
+}
+
+button#edit {
+    background-color: #2ECC71;
+    font-family: Raleway;
+    color: white;
+    padding: 10px 35px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button#delete {
+    background-color: #C0392B;
+    font-family: Raleway;
+    color: white;
+    padding: 10px 25px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
