@@ -2,11 +2,11 @@
 require("db.php");
 
 // need to seller to add new property
-session_start();
-if($_SESSION["role"] != "seller"){
-header("Location: ./logout.php");
-exit("You are not an authorized to view this page");
-}
+// session_start();
+// if($_SESSION["role"] != "seller"){
+// header("Location: ./logout.php");
+// exit("You are not an authorized to view this page");
+// }
 
 ?>
 <!DOCTYPE html>
@@ -51,7 +51,7 @@ exit("You are not an authorized to view this page");
             <br>
             Please fill out the form to list a new property to our site.
             <br><br>
-            <form action="/add_cardDB.php" method="post" enctype="multipart/form-data">
+            <form action="php_scripts/add_cardDB.php" method="post">
                 <table>
                     <tr>
                         <td style="width:400px">
@@ -113,7 +113,7 @@ exit("You are not an authorized to view this page");
                             <label for="fileToUpload" class="custom-file-upload">
                                 Upload image
                             </label>
-                            <input id="fileToUpload" type="file" name="fileToUpload" accept="image/*">
+                            <input id="fileToUpload" type="text" name="fileToUpload" value="please_work">
                         </td>
                     </tr>
                     <tr>
