@@ -1,0 +1,89 @@
+* {
+    box-sizing: border-box;
+  }
+  
+body {
+    background-color: #f1f1f1;
+    font-family: Raleway;
+}
+
+#description {
+    background-color: #ffffff;
+    margin: 100px auto;
+    font-family: Raleway;
+    padding: 40px;
+    width: 70%;
+    min-width: 300px;
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.25);
+}
+
+@font-face {
+    font-family: Raleway;
+    src: url(Raleway-Medium.ttf)
+}
+
+h2 {
+    text-align: center;
+}
+
+p {
+    font-size: 20px;
+}
+
+/* Hide all steps by default: */
+.tab {
+    display: none;
+}
+
+button {
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 17px;
+    font-family: Raleway;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#circles {
+    text-align:center;
+    margin:auto 0;
+}
+
+#prevBtn {
+    background-color: #bbbbbb;
+}
+
+.step {
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbbbbb;
+    border: none;  
+    border-radius: 50%;
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.step.active {
+    opacity: 1;
+}
+
+.tab {
+    animation: fadeSlide linear 0.7s;
+}
+
+@keyframes fadeSlide {
+    0% {
+        opacity:0;
+        transform: translateY(-25px);
+    }
+    100% {
+        opacity:1;
+        transform: translateY(0px);
+    }
+}
