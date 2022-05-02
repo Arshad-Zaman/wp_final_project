@@ -15,13 +15,11 @@
     session_start();
 
     // //redirects if already logged in
-    if($_SESSION['role'] == "seller") {
+    if ($_SESSION['role'] == "seller") {
         header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/seller_dashboard.php"); //change to your seller dashboard url
-    }
-    else if($_SESSION['role'] == "buyer") {
+    } else if ($_SESSION['role'] == "buyer") {
         header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/buyer_dashboard.php"); //change to your seller dashboard url
-    }
-    else if($_SESSION['role'] == "admin") {
+    } else if ($_SESSION['role'] == "admin") {
         header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
     }
 
@@ -40,7 +38,7 @@
         $result = $conn->query($sql);
         $rows = mysqli_num_rows($result);
 
-        if ($rows==1) {
+        if ($rows == 1) {
             $row = mysqli_fetch_assoc($result);
             // set session variables
 
@@ -54,41 +52,43 @@
                 header("Location: https://codd.cs.gsu.edu/~azaman3/WP/PW/4/admin_dashboard.php"); //change to your seller dashboard url
             }
         } else {
-            echo "<div class='form'>
-        <h3>Username/password is incorrect.</h3>
-        <br/>Click here to <a href='login.php'>Login</a></div>"; //change to your login page url
-
+        $error = "Invalid credentials!";
         }
-    } else {
+    }
     ?>
 
-    <div class="bg"></div>
-    <div class="container">
-        <form action="" method="POST">
-            <fieldset id="login">
-                <center>
-                    <h1>Login</h1>
-                    <p>Log in to your account here.</p>
+        <div class="bg"></div>
+        <div class="container">
+            <form action="login.php" method="POST">
+                <fieldset id="login">
+                    <center>
+                        <h1>Login</h1>
+                        <p>Log in to your account here.</p>
 
-                    <hr>
+                        <hr>
 
-                    <label for="email"><b>Email</b></label><br>
-                    <input type="email" required name="email" placeholder="Email" />
-                    <br>
-                    <label for="password"><b>Password</b></label><br>
-                    <input type="password" required name="password" placeholder="Password" />
-                    <input type="submit" value="Login">
+                        <label for="email"><b>Email</b></label><br>
+                        <input type="email" required name="email" placeholder="Email" />
+                        <br>
+                        <label for="password"><b>Password</b></label><br>
+                        <input type="password" required name="password" placeholder="Password" />
+                        <input type="submit" value="Login">
 
-                    <br><br><hr>
-                    <p>
+                        <br><br>
+                        <hr>
+                        <p>
+                        <div <?php if (isset($error)) : ?>) class="form_error" <?php endif ?>>
+                            <?php if (isset($error)) : ?>
+                                <span><?php echo $error; ?></span>
+                            <?php endif ?>
+                        </div>
                         Don't have an account?<br>
                         <a href="signup.php">Sign up here.</a>
-                    </p>
-                </center>
-            </fieldset>
-        </form>
-    </div>
-    <?php } ?>
+                        </p>
+                    </center>
+                </fieldset>
+            </form>
+        </div>
 </body>
 
 </html>
