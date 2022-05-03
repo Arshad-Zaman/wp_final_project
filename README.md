@@ -1,5 +1,5 @@
 # MAIV Property Hub
-## [YouTube Demo]("https://www.youtube.com")
+## [YouTube Demo]("https://youtu.be/QVqs3U0sLW8")
 ## To do:
 - Homepage (unassigned)
 - Milestone 1 and 2 form validation (arshad)
